@@ -7,6 +7,9 @@ public with sharing class AccountTest {
   static void loadTestDataFromStaticResource(){
     accounts = Test.loadData(Account.sObjectType, 'testAccounts');
     contacts = Test.loadData(Contact.sObjectType, 'testContacts');
+    // load another dataset below for contact obj will fail with `Validation Errors While Saving Record` error
+    // contacts = Test.loadData(Contact.sObjectType, 'testContacts1');
+
     System.assert(accounts.size() == 3);
     System.assert(contacts.size() == 3);
   }
